@@ -6,4 +6,12 @@
 //L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
 let km = parseInt(prompt('Quanti chilometri vuoi percorrere?'));
+let tax = 0.21;
 let age = parseInt(prompt('Quanti anni hai?'));
+let ticket_cost = ticket(km, tax);
+
+
+function ticket() {
+    return km * tax;
+}
+
