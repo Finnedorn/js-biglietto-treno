@@ -24,11 +24,11 @@ function ticket() {
 }
 
 if (age <=17) {
-    let under_18 = ticket_cost - 20/100;
+    let under_18 = ticket_cost - (ticket_cost * 20/100);
     traindiv.innerHTML = 'Costo del biglietto: ' + under_18.toFixed(2) + ' € (sconto minori di 18 anni incluso)';
 } else if (age >=65) {
-    let over_65 = ticket_cost - 40/100;
-    traindiv.innerHTML = 'Costo del biglietto: ' + over_65.toFixed(2) + ' € (sconto maggiori di 65 anni incluso)';
+    let over_65 = ticket_cost - (ticket_cost * 40/100);
+    traindiv.innerHTML = 'Costo del biglietto: ' + over_65.toFixed(2) + ' € (sconto minori di 18 anni incluso)';
 } else {
     traindiv.innerHTML = 'Costo del biglietto: ' + ticket_cost.toFixed(2) + ' €'; 
 }
