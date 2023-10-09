@@ -17,18 +17,13 @@ if (isNaN(km) || isNaN(age)) {
    location.reload();
 }
 
-
-let ticket_cost = ticket(km, tax);
-function ticket() {
-    return km * tax;
-}
-
 if (age <=17) {
-    let under_18 = ticket_cost - (ticket_cost * 20/100);
+    let under_18 = km * tax - ((km * tax) * 20/100);
     traindiv.innerHTML = 'Costo del biglietto: ' + under_18.toFixed(2) + ' € (sconto minori di 18 anni incluso)';
 } else if (age >=65) {
-    let over_65 = ticket_cost - (ticket_cost * 40/100);
+    let over_65 = km * tax - ((km * tax) * 40/100);
     traindiv.innerHTML = 'Costo del biglietto: ' + over_65.toFixed(2) + ' € (sconto minori di 18 anni incluso)';
 } else {
-    traindiv.innerHTML = 'Costo del biglietto: ' + ticket_cost.toFixed(2) + ' €'; 
+    let pure = km * tax;
+    traindiv.innerHTML = 'Costo del biglietto: ' + pure.toFixed(2) + ' €'; 
 }
