@@ -5,13 +5,30 @@
 //va applicato uno sconto del 40% per gli over 65.
 //L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
+let traindiv = document.getElementById ('train');
 let km = parseInt(prompt('Quanti chilometri vuoi percorrere?'));
 let tax = 0.21;
 let age = parseInt(prompt('Quanti anni hai?'));
+
+console.log ('numero km', km, 'età passeggero', age);
+
+if (isNaN(km) || isNaN(age)) {
+   alert('inserisci dei numeri');
+   location.reload();
+}
+
+
 let ticket_cost = ticket(km, tax);
-
-
 function ticket() {
     return km * tax;
 }
 
+if (age <=17) {
+    let under_18 = ticket_cost - 20/100;
+    traindiv.innerHTML = 'Costo del biglietto: ' + under_18.toFixed(2) + ' € (sconto minori di 18 anni incluso)';
+} else if (age >=65) {
+    let over_65 = ticket_cost - 40/100;
+    traindiv.innerHTML = 'Costo del biglietto: ' + over_65.toFixed(2) + ' € (sconto maggiori di 65 anni incluso)';
+} else {
+    traindiv.innerHTML = 'Costo del biglietto: ' + ticket_cost.toFixed(2) + ' €'; 
+}
