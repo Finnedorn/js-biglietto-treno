@@ -84,3 +84,49 @@ yellowbuttonbuttonbutton.addEventListener('click',
         cont.classList.toggle('bg-warning');
     }
 );
+
+//Nota bene!! in entrambe le funzioni ho dovuto inserire il comando remove per rimuovere il colori gia seelzionati in modo tale da non creare conflitto con le classi colore all'attivazione di una o più classi!!!
+
+
+
+//ex03
+
+/*creo un form dove una volta inserito nome e sesso e premuto invia esca un messaggio ed un pallino colorato a seconda del sesso scelto*/
+
+const button = document.querySelector('.btn-success');
+
+console.dir(button);
+
+button.addEventListener('click',
+    function() {
+        const nome = document.getElementById('nome').value;
+        const sesso = document.getElementById('sesso').value;
+
+        if(nome === '' || sesso === ''){
+            alert('devi inserire due valori!')
+        } else {
+            console.log(nome);
+            console.log(sesso);
+            const msgsaluto = document.getElementById('saluto');
+            const msgcontainer = saluto.querySelector('p');
+            const box = saluto.querySelector('.box');
+            
+            msgcontainer.innerHTML =`
+                <h3>Ciao ${nome} !</h3>
+            `;
+            box.classList.remove('maschio');
+            box.classList.remove('femmina');
+            //qui sto dicendo aggiungi il valore (value) di sesso alla class box 
+            //in questo caso i valori sono maschio e femmina
+            let color;
+            saluto.classList.remove('d-none');
+            if (sesso === 'femmina') {
+                color = 'femmina';
+            } else  {
+                color = 'maschio'
+            }
+            box.classList.add(color);
+            saluto.classList.remove('d-none');
+        }
+    }
+);

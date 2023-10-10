@@ -1,0 +1,14 @@
+
+.box {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.maschio {
+    background-color: rgb(75, 75, 254);
+}
+
+.femmina {
+    background-color: rgb(255, 167, 181);
+}
