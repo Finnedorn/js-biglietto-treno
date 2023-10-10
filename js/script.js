@@ -1,3 +1,4 @@
+/*
 let traindiv = document.getElementById ('train');
 let km = parseInt(prompt('Quanti chilometri vuoi percorrere?'));
 let tax = 0.21;
@@ -20,3 +21,66 @@ if (age <=17) {
     let pure = km * tax;
     traindiv.innerHTML = 'Costo del biglietto: ' + pure.toFixed(2) + ' €'; 
 }
+*/
+
+/*creo una costante che chiamerò cont con document mi pesco elementi dall'html e con queryselector posso selezionare un elemento dall hmtl con quella classe o linkato a quella classe (es .container>p)*/
+
+const cont = document.querySelector('.container')
+
+//console.dir mi permette di visualizzare il contenuto html selezionato dentro alla mia console, in questo modo sarò sicuro di avere selzionato proprio quell'elemento 
+
+console.dir(cont);
+
+/*addeventlistener mi permette di dare ad una const o var la possiiblità di triggerare un evento, dentro alla parentesi inserisci tra '' il tipo di evento che causera il trigger tipo click o altri, cerca gli altri event su w3school*/
+
+/*ho creato quindi un evento trigger con click legato ad una funzione che mi permetta al click di rendere il colore di background rosso*/
+
+
+cont.addEventListener('click',
+    function(){
+        cont.style.backgroundcolor = 'red';
+    }
+);
+
+
+/*ho creato un evento trigger che mi permetta di aggiungere con un click una classe bg-danger (in questo caso sto usando una classe bootstrap che renda il bg rosso, in altri casi dovremmo settare prima la classe ed i suoi attributi dal css) all'elemento container selezionato dalla variabile let cont*/
+
+cont.addEventListener('click',
+    function(){
+        cont.classList.add('bg-danger');
+    }
+);
+
+//ora voglio selezionare tutti e tre i bottoni dell'html, quindi creo 3 const una per ogni bottone
+
+const redbutton = document.querySelector('.btn-danger');
+const bluebutton = document.querySelector('.btn-info');
+const yellowbutton = document.querySelector('.btn-warning');
+
+//ora creo un trigger linkato ad una funzione che mi porti lo sfondo del container (cont) ad assumere il colore del bottone premuto
+
+redbutton.addEventListener('click', 
+    function(){
+        const.classList.remove('bg-warning');
+        const.classList.remove('bg-info');
+        cont.classList.toggle('bg-danger');
+    }
+);
+
+//ora creo un trigger per ogni colore 
+
+bluebuttonbutton.addEventListener('click', 
+    function(){
+        const.classList.remove('bg-warning');
+        const.classList.remove('bg-danger');
+        cont.classList.toggle('bg-info');
+    }
+);
+
+yellowbuttonbuttonbutton.addEventListener('click', 
+    function(){
+        const.classList.remove('bg-danger');
+        const.classList.remove('bg-info');
+        cont.classList.toggle('bg-warning');
+    }
+);
